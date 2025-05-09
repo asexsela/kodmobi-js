@@ -1,0 +1,28 @@
+{
+	"name": "@kodmobi/kodmobi-js",
+	"version": "0.1.2",
+	"description": "A JavaScript wrapper for kod.mobi HTTP API",
+	"scripts": {
+		"build": "rollup -c"
+	},
+	"keywords": [
+		"kodmobi",
+		"api",
+		"sms",
+		"telegram",
+		"whatsapp",
+		"email"
+	],
+	"main": "index.js",
+	"module": "index.js",
+	"types": "index.d.ts",
+	"author": "Asexsela <asexsela@email.com>",
+	"license": "MIT",
+	"readmeFilename": "README.md",
+	"type": "module",
+	"packageManager": "pnpm@10.6.1+sha256.81204845a396962a9c4b49cc2d6cafbb49a758652d3c243f2128cbc638084fe2",
+	"devDependencies": {
+		"@rollup/plugin-terser": "^0.4.4",
+		"release-it": "^19.0.2"
+	}
+}

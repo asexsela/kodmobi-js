@@ -1,0 +1,28 @@
+{
+	"name": "@kodmobi/kodmobi-js",
+	"version": "0.1.8",
+	"description": "A JavaScript wrapper for kod.mobi HTTP API",
+	"keywords": [
+		"kodmobi",
+		"api",
+		"sms",
+		"telegram",
+		"whatsapp",
+		"email"
+	],
+	"main": "index.js",
+	"module": "index.mjs",
+	"types": "index.d.ts",
+	"files": [
+		"index.js",
+		"index.mjs",
+		"index.js.map",
+		"index.mjs.map",
+		"index.d.ts"
+	],
+	"author": "Asexsela <asexsela@email.com>",
+	"license": "MIT",
+	"readmeFilename": "README.md",
+	"type": "module",
+	"sideEffects": false
+}

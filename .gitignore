@@ -1,0 +1,9 @@
+node_modules/
+
+dist/index.js
+dist/index.mjs
+dist/index.mjs.map
+dist/index.js.map
+
+test.js
+index.html
