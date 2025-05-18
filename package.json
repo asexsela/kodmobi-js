@@ -3,7 +3,8 @@
 	"version": "0.1.2",
 	"description": "A JavaScript wrapper for kod.mobi HTTP API",
 	"scripts": {
-		"build": "rollup -c"
+		"build": "rollup -c",
+		"sri": "echo \"sha384-$(openssl dgst -sha384 -binary dist/index.js | openssl base64 -A)\""
 	},
 	"keywords": [
 		"kodmobi",

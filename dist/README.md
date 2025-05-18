@@ -5,6 +5,10 @@
 A simple JavaScript wrapper for the [kod.mobi](https://kod.mobi) HTTP API.
 This package makes it easy to integrate kod.mobi into your web projects.
 
+## SRI
+
+- `sha384-G2iT00Yxtc/lk9FbuYr5NXhxY5Tq+Sb5aftYAde6IgCFXJ47vMe+0bKq4gEvAC3s`
+
 ## Installation
 
 ```bash
@@ -14,6 +18,8 @@ npm install @kodmobi/kodmobi-js
 ```html
 <!-- <script src="https://unpkg.com/@kodmobi@{version}/kodmobi-js"></script> -->
 <script src="https://unpkg.com/@kodmobi/kodmobi-js"></script>
+<script src="https://unpkg.com/@kodmobi/kodmobi-js@v0.1.16" integrity="sha384-G2iT00Yxtc/lk9FbuYr5NXhxY5Tq+Sb5aftYAde6IgCFXJ47vMe+0bKq4gEvAC3s" crossorigin="anonymous"></script>
+
 <script>
 	const km = new kodmobi.Kodmobi("API_KEY");
 </script>
@@ -95,8 +101,9 @@ km.on("error", showError);
 
 - `settings`: Get settings
 - `prefered`: Get preferred channel
-- `channels`: Get available channels
 - `destination`: Get destination
+- `session`: Get session info
+- `channels()`: Get available channels
 - `create(to, send)`: Create a session
 - `send(channel)`: Send a message
 - `check(code)`: Check a code
