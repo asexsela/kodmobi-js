@@ -49,7 +49,7 @@ km.once("ready", async () => {
 	// get prefered (in active session)
 	const channel = kod.prefered;
 	// get available channels (for currenct user)
-	const channels = kod.channels;
+	const channels = await kod.channels();
 	// get user destination (phone/email)
 	const destination = kod.destination;
 
