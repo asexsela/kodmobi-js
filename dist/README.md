@@ -7,7 +7,7 @@ This package makes it easy to integrate kod.mobi into your web projects.
 
 ## SRI
 
-- `sha384-G2iT00Yxtc/lk9FbuYr5NXhxY5Tq+Sb5aftYAde6IgCFXJ47vMe+0bKq4gEvAC3s`
+- `sha384-reu9mM0BkGVkENwhvMh9YC/HsumUpdFrvA0vqjpBqdwKDpeC7uuAh99/P+vQppmV`
 
 ## Installation
 
@@ -16,9 +16,8 @@ npm install @kodmobi/kodmobi-js
 ```
 
 ```html
-<!-- <script src="https://unpkg.com/@kodmobi@{version}/kodmobi-js"></script> -->
-<script src="https://unpkg.com/@kodmobi/kodmobi-js"></script>
-<script src="https://unpkg.com/@kodmobi/kodmobi-js@v0.1.16" integrity="sha384-G2iT00Yxtc/lk9FbuYr5NXhxY5Tq+Sb5aftYAde6IgCFXJ47vMe+0bKq4gEvAC3s" crossorigin="anonymous"></script>
+<!-- <script src="https://unpkg.com/@kodmobi/kodmobi-js integrity="sha384-reu9mM0BkGVkENwhvMh9YC/HsumUpdFrvA0vqjpBqdwKDpeC7uuAh99/P+vQppmV" crossorigin="anonymous""></script> -->
+<script src="https://unpkg.com/@kodmobi/kodmobi-js@v0.1.18" integrity="sha384-reu9mM0BkGVkENwhvMh9YC/HsumUpdFrvA0vqjpBqdwKDpeC7uuAh99/P+vQppmV" crossorigin="anonymous"></script>
 
 <script>
 	const km = new kodmobi.Kodmobi("API_KEY");
