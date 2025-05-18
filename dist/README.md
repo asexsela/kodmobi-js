@@ -44,6 +44,8 @@ km.once("ready", async () => {
 	// channels - all available channels
 	const { prefered, list } = await kod.create(to, true);
 
+	// get session info
+	const channel = kod.session;
 	// get prefered (in active session)
 	const channel = kod.prefered;
 	// get available channels (for currenct user)

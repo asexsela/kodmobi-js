@@ -33,7 +33,6 @@ export interface IKodmobiChannel {
 }
 
 export interface IKodmobiSession {
-	readonly destination: string;
 	readonly sessionId: string;
 	readonly sessionExpires: Date;
 }
@@ -54,11 +53,12 @@ export class Kodmobi {
 
 	readonly settings: IKodmobiSettings | null;
 	readonly prefered: IKodmobiChannel | null;
-	readonly channels: IKodmobiChannel[];
 	readonly destination: string | null;
+	readonly session: IKodmobiSession | null;
 
 	setVerifyCallback(cb: Function): void;
 
+	channels(): Promise<IKodmobiChannel[]>;
 	create(to: string, send?: boolean): Promise<IKodmobiSessionChannel>;
 	send(channel: string): Promise<boolean>;
 	check(code: string): Promise<IKodmobiSessionCheck>;
@@ -71,8 +71,8 @@ export class Kodmobi {
 
 export interface Constants {
 	URL: {
-		DEV: string;
-		PROD: string;
+		V2: string;
+		V2_1: string;
 	};
 	EVENT: {
 		SESSION_CREATED: string;
