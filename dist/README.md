@@ -7,7 +7,7 @@ This package makes it easy to integrate kod.mobi into your web projects.
 
 ## SRI
 
-- `sha384-reu9mM0BkGVkENwhvMh9YC/HsumUpdFrvA0vqjpBqdwKDpeC7uuAh99/P+vQppmV`
+- `sha384-M3CKsXCAmDOh0dVYbTMdIJECOKQ+oAmmLYsn8Wd3ePKCC3wxeoVyyUe+tIwFCp0E`
 
 ## Installation
 
@@ -16,8 +16,12 @@ npm install @kodmobi/kodmobi-js
 ```
 
 ```html
-<!-- <script src="https://unpkg.com/@kodmobi/kodmobi-js integrity="sha384-reu9mM0BkGVkENwhvMh9YC/HsumUpdFrvA0vqjpBqdwKDpeC7uuAh99/P+vQppmV" crossorigin="anonymous""></script> -->
-<script src="https://unpkg.com/@kodmobi/kodmobi-js@v0.1.18" integrity="sha384-reu9mM0BkGVkENwhvMh9YC/HsumUpdFrvA0vqjpBqdwKDpeC7uuAh99/P+vQppmV" crossorigin="anonymous"></script>
+<!-- <script src="https://unpkg.com/@kodmobi/kodmobi-js integrity="sha384-M3CKsXCAmDOh0dVYbTMdIJECOKQ+oAmmLYsn8Wd3ePKCC3wxeoVyyUe+tIwFCp0E" crossorigin="anonymous""></script> -->
+<script
+	src="https://unpkg.com/@kodmobi/kodmobi-js@v0.1.18"
+	integrity="sha384-M3CKsXCAmDOh0dVYbTMdIJECOKQ+oAmmLYsn8Wd3ePKCC3wxeoVyyUe+tIwFCp0E"
+	crossorigin="anonymous"
+></script>
 
 <script>
 	const km = new kodmobi.Kodmobi("API_KEY");
@@ -40,59 +44,70 @@ km.setVerifyCallback((verifyToken) {
 });
 
 
-km.once("ready", async () => {
-	// get settings
-	const settings = kod.settings;
+// get settings
+const settings = kod.settings;
 
-	// create session for "to" (phone/email) and send code flag as second parameter
-	// prefered - prefered user channels
-	// channels - all available channels
-	const { prefered, list } = await kod.create(to, true);
+// create session for "to" (phone/email) and send code flag as second parameter
+// prefered - prefered user channels
+// channels - all available channels
+const { prefered, list } = await kod.create(to, true);
 
-	// get session info
-	const channel = kod.session;
-	// get prefered (in active session)
-	const channel = kod.prefered;
-	// get available channels (for currenct user)
-	const channels = await kod.channels();
-	// get user destination (phone/email)
-	const destination = kod.destination;
+// get session info
+const channel = kod.session;
+// get prefered (in active session)
+const channel = kod.prefered;
+// get available channels (for currenct user)
+const channels = await kod.channels();
+// get user destination (phone/email)
+const destination = kod.destination;
 
-	// send code to speciefic channels
-	// return bool
-	const send = await kod.send(channel);
+// send code to speciefic channels
+// return bool
+const send = await kod.send(channel);
 
-	// check user code
-	// setVerifyCallback - also uses in this step behinde the scene
-	const { success, isVerified, data } = await kod.check(code);
+// check user code
+// setVerifyCallback - also uses in this step behinde the scene
+const { success, isVerified, data } = await kod.check(code);
+
+
+km.once("ready", async ({
+	isNewSession,
+	settings,
+	prefered,
+	destination,
+	session,
+	setVerifyCallback,
+	channels,
+	create,
+	send,
+	check
+}) => {
+	// do something
 });
 
-
-function drawEnterCodeContainer({ prefered, list }) {
+km.on("session:created", ({prefered, list}) => {
 	// do something
-}
+});
 
-function drawEnterLoginContainer() {
+km.on("session:loaded", ({prefered, list}) => {
 	// do something
-}
+});
 
-function redirectToProfile(data) {
+km.on("session:expired", () => {
+	// do something
+});
+
+km.on("session:success", (data) => {
 	// data your data from verification callback
 	// do something
-}
+});
 
-function showError({message, hint, sysMessage}) {
+km.on("error", ({message, hint, sysMessage}) => {
 	// message - error message
 	// hint - helper message
 	// sysMessage - constant
 	// do something
-}
-
-km.on("session:created", drawEnterCodeContainer);
-km.on("session:loaded", drawEnterCodeContainer);
-km.on("session:expired", drawEnterLoginContainer);
-km.on("session:success", redirectToProfile);
-km.on("error", showError);
+});
 
 ```
 
