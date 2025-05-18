@@ -7,7 +7,7 @@ This package makes it easy to integrate kod.mobi into your web projects.
 
 ## SRI
 
-- `sha384-Bl3MVqY/GXvv8uPDGEd1JGIGDxE400sQ8chQ1eByZMBoDZDhAA2+g7mqtOex4RBy`
+- `sha384-z3sYt6ir0Hm4rN2sBch9oLqnCjvSC0coO5DuRW+VV9+htXmYYDpcCNLez9I959Bm`
 
 ## Installation
 
@@ -16,10 +16,10 @@ npm install @kodmobi/kodmobi-js
 ```
 
 ```html
-<!-- <script src="https://unpkg.com/@kodmobi/kodmobi-js integrity="sha384-Bl3MVqY/GXvv8uPDGEd1JGIGDxE400sQ8chQ1eByZMBoDZDhAA2+g7mqtOex4RBy" crossorigin="anonymous""></script> -->
+<!-- <script src="https://unpkg.com/@kodmobi/kodmobi-js integrity="sha384-z3sYt6ir0Hm4rN2sBch9oLqnCjvSC0coO5DuRW+VV9+htXmYYDpcCNLez9I959Bm" crossorigin="anonymous""></script> -->
 <script
 	src="https://unpkg.com/@kodmobi/kodmobi-js@v0.1.20"
-	integrity="sha384-Bl3MVqY/GXvv8uPDGEd1JGIGDxE400sQ8chQ1eByZMBoDZDhAA2+g7mqtOex4RBy"
+	integrity="sha384-z3sYt6ir0Hm4rN2sBch9oLqnCjvSC0coO5DuRW+VV9+htXmYYDpcCNLez9I959Bm"
 	crossorigin="anonymous"
 ></script>
 

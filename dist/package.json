@@ -1,6 +1,6 @@
 {
 	"name": "@kodmobi/kodmobi-js",
-	"version": "0.1.20",
+	"version": "0.2.0",
 	"description": "A JavaScript wrapper for kod.mobi HTTP API",
 	"keywords": [
 		"kodmobi",

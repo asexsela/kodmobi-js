@@ -52,13 +52,14 @@ export class Kodmobi {
 	constructor(apiKey: string, baseUrl?: string | null);
 
 	readonly settings: IKodmobiSettings | null;
-	readonly prefered: IKodmobiChannel | null;
+	readonly preferedChannel: IKodmobiChannel | null;
+	readonly sessionChannels: IKodmobiChannel[];
 	readonly destination: string | null;
 	readonly session: IKodmobiSession | null;
 
 	setVerifyCallback(cb: Function): void;
 
-	channels(): Promise<IKodmobiChannel[]>;
+	getChannels(): Promise<IKodmobiChannel[]>;
 	create(to: string, send?: boolean): Promise<IKodmobiSessionChannel>;
 	send(channel: string): Promise<boolean>;
 	check(code: string): Promise<IKodmobiSessionCheck>;
