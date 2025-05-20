@@ -18,7 +18,7 @@ npm install @kodmobi/kodmobi-js
 ```html
 <!-- <script src="https://unpkg.com/@kodmobi/kodmobi-js integrity="sha384-geiIUaB5eno4JP4N2a4n3BC6jTWbnrMcNxAedYS2gq23wAdSfg344OxM2fOlOupO" crossorigin="anonymous""></script> -->
 <script
-	src="https://unpkg.com/@kodmobi/kodmobi-js@v0.1.21"
+	src="https://unpkg.com/@kodmobi/kodmobi-js@v0.2.1"
 	integrity="sha384-geiIUaB5eno4JP4N2a4n3BC6jTWbnrMcNxAedYS2gq23wAdSfg344OxM2fOlOupO"
 	crossorigin="anonymous"
 ></script>
