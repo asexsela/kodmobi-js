@@ -57,6 +57,8 @@ export class Kodmobi {
 	readonly destination: string | null;
 	readonly session: IKodmobiSession | null;
 
+	setApiKey(apiKey: string): void;
+	setBaseUrl(baseUrl: string): void;
 	setVerifyCallback(cb: Function): void;
 
 	getChannels(): Promise<IKodmobiChannel[]>;

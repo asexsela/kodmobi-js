@@ -7,7 +7,7 @@ This package makes it easy to integrate kod.mobi into your web projects.
 
 ## SRI
 
-- `sha384-z3sYt6ir0Hm4rN2sBch9oLqnCjvSC0coO5DuRW+VV9+htXmYYDpcCNLez9I959Bm`
+- `sha384-geiIUaB5eno4JP4N2a4n3BC6jTWbnrMcNxAedYS2gq23wAdSfg344OxM2fOlOupO`
 
 ## Installation
 
@@ -16,10 +16,10 @@ npm install @kodmobi/kodmobi-js
 ```
 
 ```html
-<!-- <script src="https://unpkg.com/@kodmobi/kodmobi-js integrity="sha384-z3sYt6ir0Hm4rN2sBch9oLqnCjvSC0coO5DuRW+VV9+htXmYYDpcCNLez9I959Bm" crossorigin="anonymous""></script> -->
+<!-- <script src="https://unpkg.com/@kodmobi/kodmobi-js integrity="sha384-geiIUaB5eno4JP4N2a4n3BC6jTWbnrMcNxAedYS2gq23wAdSfg344OxM2fOlOupO" crossorigin="anonymous""></script> -->
 <script
-	src="https://unpkg.com/@kodmobi/kodmobi-js@v0.1.20"
-	integrity="sha384-z3sYt6ir0Hm4rN2sBch9oLqnCjvSC0coO5DuRW+VV9+htXmYYDpcCNLez9I959Bm"
+	src="https://unpkg.com/@kodmobi/kodmobi-js@v0.1.21"
+	integrity="sha384-geiIUaB5eno4JP4N2a4n3BC6jTWbnrMcNxAedYS2gq23wAdSfg344OxM2fOlOupO"
 	crossorigin="anonymous"
 ></script>
 
@@ -43,6 +43,9 @@ km.setVerifyCallback((verifyToken) {
 	return { ok: false, data: { access_token: "1234", refresh_token: "3345" } };
 });
 
+// optional
+// change api key later (hot update)
+kod.setApiKey("YOUR_API_KEY")
 
 // get settings
 const settings = kod.settings;
@@ -73,11 +76,12 @@ const { success, isVerified, data } = await kod.check(code);
 km.once("ready", async ({
 	isNewSession,
 	settings,
-	prefered,
+	preferedChannel,
+	sessionChannels,
 	destination,
 	session,
 	setVerifyCallback,
-	channels,
+	getChannels,
 	create,
 	send,
 	check
@@ -114,14 +118,16 @@ km.on("error", ({message, hint, sysMessage}) => {
 ### API
 
 - `settings`: Get settings
-- `prefered`: Get preferred channel
+- `preferedChannel`: Get preferred/last channel
+- `sessionChannels`: Get available channels per session
 - `destination`: Get destination
 - `session`: Get session info
-- `channels()`: Get available channels
+- `getChannels()`: Fetch available channels
 - `create(to, send)`: Create a session
 - `send(channel)`: Send a message
 - `check(code)`: Check a code
 - `setVerifyCallback(cb)`: Set a verification callback
+- `setApiKey(apiKey)`: Set an API key
 
 ### Events
 
